@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Carta de Tragos</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1c2333;
+  --bg2: #232b3e;
+  --bg3: #2a3347;
+  --border: rgba(255,255,255,0.08);
+  --border-accent: rgba(255,255,255,0.15);
+  --white: #ffffff;
+  --muted: rgba(255,255,255,0.5);
+  --accent: #7b9cbe;
+  --accent-light: #a8c4de;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.header {
+  padding: 3rem 1.5rem 2.5rem;
+  text-align: center;
+  border-bottom: 0.5px solid var(--border);
+}
+.header-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+}
+.header-sub {
+  margin-top: 1rem;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+.section {
+  margin-top: 2rem;
+  padding: 0 1.25rem;
+}
+
+.section-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.card {
+  border-bottom: 0.5px solid var(--border);
+  overflow: hidden;
+}
+
+.card-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.1rem 0;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-toggle-left { flex: 1; }
+
+.card-nombre {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--white);
+  display: block;
+  line-height: 1.2;
+}
+
+.card-badge {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-top: 3px;
+  display: block;
+}
+
+.card-arrow {
+  color: var(--accent);
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  font-weight: 300;
+}
+.card.open .card-arrow { transform: rotate(45deg); }
+
+.card-body {
+  display: none;
+  padding-bottom: 1.25rem;
+}
+.card.open .card-body { display: block; }
+
+.card-origen {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+  font-style: italic;
+}
+
+.block-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.ing-list { list-style: none; }
+.ing-list li {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--white);
+  padding: 4px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  border-bottom: 0.5px solid var(--border);
+}
+.ing-list li:last-child { border-bottom: none; }
+.ing-list li::before {
+  content: '·';
+  color: var(--accent);
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.prep-text {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+
+.warn {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--accent-light);
+  letter-spacing: 0.04em;
+}
+
+.card.autor .card-nombre { color: var(--accent-light); }
+
+.footer {
+  text-align: center;
+  padding: 3rem 1.5rem 1rem;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <p class="header-eyebrow">Bienvenidos</p>
+  <h1>Carta de<br>Tragos</h1>
+  <p class="header-sub">Ayúdate vos mismo · Salud</p>
+</div>
+
+<!-- APERITIVOS -->
+<div class="section">
+  <p class="section-label">Aperitivos</p>
+
+  <div class="card">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Garibaldi</span>
+        <span class="card-badge">Italia · 1860s</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">Nacido en honor al héroe de la unificación italiana. Simple, equilibrado y perfecto para abrir el paladar.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>1 oz Campari</li>
+        <li>3 oz Jugo de naranja fresco</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Vaso largo con hielo. Campari primero, jugo de naranja encima. Revolver suavemente.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Americano</span>
+        <span class="card-badge">Italia · 1860s</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">Predecesor del Negroni, era el favorito de James Bond antes de que pidiera su primer Martini.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>1 oz Campari</li>
+        <li>1 oz Vermouth rosso</li>
+        <li>Soda (completa el vaso)</li>
+        <li>Twist de naranja</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Vaso largo con hielo. Campari y vermouth. Completar con soda. Decorar con naranja.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Ferroviario</span>
+        <span class="card-badge">Argentina</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">Clásico porteño de los bares de estación. Combinación criolla, sin pretensiones, infalible.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>1 oz Fernet</li>
+        <li>1 oz Amargo Obrero</li>
+        <li>Soda (completa el vaso)</li>
+        <li>Rodaja de limón</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Vaso largo con hielo. Fernet y Amargo Obrero. Completar con soda. Exprimir y dejar el limón adentro.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Fernet con Cola</span>
+        <span class="card-badge">Argentina · rito nacional</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">Argentina consume el 75% del Fernet Branca producido en el mundo. Es simplemente nuestro.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>Fernet Branca (al gusto)</li>
+        <li>Coca-Cola</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Vaso largo con hielo. Proporción 1:3 (Fernet:Cola). Sin revolver demasiado para no perder el gas.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GIN -->
+<div class="section">
+  <p class="section-label">Gin</p>
+
+  <div class="card">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Gimlet</span>
+        <span class="card-badge">Royal Navy · 1800s</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">Inventado por la Marina Real Británica para que los marineros tomaran su ración de vitamina C.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>2 oz Gin</li>
+        <li>0.5 oz Cordial de lima</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Coctelera con hielo. Agitar fuerte. Servir colado en copa fría.</p>
+      <span class="warn">⚠ Tené cuidado que no se abra.</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Negroni</span>
+        <span class="card-badge">Florencia · 1919</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">El Conde Negroni pidió que le pusieran gin en su Americano. Hoy es uno de los cócteles más pedidos del mundo.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>1 oz Gin</li>
+        <li>1 oz Campari</li>
+        <li>1 oz Vermouth rosso</li>
+        <li>Twist de naranja</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Vaso old fashioned con hielo. Partes iguales de los tres. Revolver 20 seg. Decorar con naranja.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Gin Tonic</span>
+        <span class="card-badge">India Británica · 1800s</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">La quinina de la tónica era el antipalúdico de los soldados británicos en India. Le agregaron gin para hacerlo tolerable.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>Gin (al gusto)</li>
+        <li>Agua tónica</li>
+        <li>Rodaja de pepino o lima</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Copa balón con hielo abundante. Gin primero, tónica despacio por el costado. Decorar.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WHISKEY -->
+<div class="section">
+  <p class="section-label">Whiskey</p>
+
+  <div class="card">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Boulevardier</span>
+        <span class="card-badge">París · 1927</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">El Negroni con bourbon en lugar de gin. Lo popularizó Erskine Gwynne, un americano que editaba una revista de vida nocturna parisina.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>2 oz Bourbon (Bulleit)</li>
+        <li>1 oz Campari</li>
+        <li>1 oz Vermouth rosso</li>
+        <li>Twist de naranja</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Vaso mezclador con hielo. Revolver 20-25 seg. Servir en vaso old fashioned con hielo grande.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Manhattan</span>
+        <span class="card-badge">Nueva York · 1880s</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">Supuestamente creado en el Manhattan Club para un banquete de Lady Randolph Churchill. El mito es demasiado bueno para abandonarlo.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>2 oz Bourbon (Bulleit)</li>
+        <li>1 oz Vermouth rosso</li>
+        <li>2 dashes Angostura bitters</li>
+        <li>Cereza al marraschino</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Vaso mezclador con hielo. Revolver 20-25 seg. Servir en copa fría. Decorar con cereza.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Old Fashioned</span>
+        <span class="card-badge">Kentucky · 1800s</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">El cóctel más antiguo que existe. En los años 1800, "cóctel" significaba exactamente esto: espirituosa, azúcar, agua y bitters.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>2 oz Bourbon (Bulleit)</li>
+        <li>1 oz Almíbar simple</li>
+        <li>2 dashes Angostura bitters</li>
+        <li>Twist de naranja</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Vaso old fashioned. Almíbar y bitters primero. Agregar hielo y bourbon. Revolver. Exprimir naranja encima y decorar.</p>
+    </div>
+  </div>
+</div>
+
+<!-- DE AUTOR -->
+<div class="section">
+  <p class="section-label">De Autor</p>
+
+  <div class="card autor">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Almirante Brown</span>
+        <span class="card-badge">Original · Exclusivo de la noche</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">Un tributo al Padre de la Armada Argentina. Nacido en Irlanda pero héroe eterno del Río de la Plata, este cóctel une el espíritu de sus dos patrias en una sola copa. Perfil: seco, herbáceo, cítrico y complejo.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>1.5 oz Whisky Irlandés (Tullamore)</li>
+        <li>1 oz Cold brew de yerba mate</li>
+        <li>0.25 oz Almíbar simple</li>
+        <li>2 dashes Angostura bitters</li>
+        <li>1 pizca de sal</li>
+        <li>Zest de pomelo rosado</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Vaso con hielo abundante. Agregar todos los ingredientes. Revolver 15-20 seg. Colar sobre vaso corto con cubo de hielo grande. Exprimir zest de pomelo encima y decorar.</p>
+    </div>
+  </div>
+
+  <div class="card autor">
+    <button class="card-toggle" onclick="toggle(this)">
+      <div class="card-toggle-left">
+        <span class="card-nombre">Safari Mudslide</span>
+        <span class="card-badge">Original · Exclusivo de la noche</span>
+      </div>
+      <span class="card-arrow">+</span>
+    </button>
+    <div class="card-body">
+      <p class="card-origen">El giro sudafricano de un clásico cremoso. Al reemplazar la crema irlandesa por Amarula, el trago gana un perfil frutal y notas a nuez únicas. Perfil: cremoso, dulce y frutal.</p>
+      <span class="block-label">Ingredientes</span>
+      <ul class="ing-list">
+        <li>1 oz Vodka</li>
+        <li>1 oz Licor de café</li>
+        <li>1 oz Amarula</li>
+        <li>Nuez moscada o canela para decorar</li>
+      </ul>
+      <span class="block-label">Preparación</span>
+      <p class="prep-text">Coctelera con hielo abundante. Agregar vodka, licor de café y Amarula en partes iguales. Batir 10-15 seg. Colar en vaso corto con o sin hielo. Espolvorear nuez moscada o canela encima.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Salud y buena noche</div>
+
+<script>
+function toggle(btn) {
+  btn.closest('.card').classList.toggle('open');
+}
+</script>
+</body>
+</html>
