@@ -17,9 +17,9 @@
   --accent: #7b9cbe;
   --accent-light: #a8c4de;
 }
- 
+
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
- 
+
 body {
   background: var(--bg);
   color: var(--white);
@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   padding-bottom: 4rem;
 }
- 
+
 .header {
   padding: 3rem 1.5rem 2.5rem;
   text-align: center;
@@ -56,12 +56,12 @@ body {
   color: var(--muted);
   letter-spacing: 0.1em;
 }
- 
+
 .section {
   margin-top: 2rem;
   padding: 0 1.25rem;
 }
- 
+
 .section-label {
   font-size: 9px;
   font-weight: 500;
@@ -72,12 +72,12 @@ body {
   padding-bottom: 0.75rem;
   border-bottom: 0.5px solid var(--border);
 }
- 
+
 .card {
   border-bottom: 0.5px solid var(--border);
   overflow: hidden;
 }
- 
+
 .card-toggle {
   width: 100%;
   background: none;
@@ -90,9 +90,9 @@ body {
   align-items: center;
   gap: 12px;
 }
- 
+
 .card-toggle-left { flex: 1; }
- 
+
 .card-nombre {
   font-family: 'DM Serif Display', serif;
   font-size: 22px;
@@ -101,7 +101,7 @@ body {
   display: block;
   line-height: 1.2;
 }
- 
+
 .card-badge {
   font-size: 11px;
   font-weight: 300;
@@ -110,7 +110,7 @@ body {
   margin-top: 3px;
   display: block;
 }
- 
+
 .card-arrow {
   color: var(--accent);
   font-size: 22px;
@@ -120,13 +120,13 @@ body {
   font-weight: 300;
 }
 .card.open .card-arrow { transform: rotate(45deg); }
- 
+
 .card-body {
   display: none;
   padding-bottom: 1.25rem;
 }
 .card.open .card-body { display: block; }
- 
+
 .card-origen {
   font-size: 13px;
   font-weight: 300;
@@ -135,7 +135,7 @@ body {
   margin-bottom: 1.1rem;
   font-style: italic;
 }
- 
+
 .block-label {
   font-size: 9px;
   font-weight: 500;
@@ -146,7 +146,7 @@ body {
   margin-bottom: 0.5rem;
   margin-top: 1rem;
 }
- 
+
 .ing-list { list-style: none; }
 .ing-list li {
   font-size: 14px;
@@ -166,14 +166,14 @@ body {
   line-height: 1;
   flex-shrink: 0;
 }
- 
+
 .prep-text {
   font-size: 13px;
   font-weight: 300;
   color: rgba(255,255,255,0.75);
   line-height: 1.7;
 }
- 
+
 .warn {
   display: block;
   margin-top: 8px;
@@ -181,9 +181,9 @@ body {
   color: var(--accent-light);
   letter-spacing: 0.04em;
 }
- 
+
 .card.autor .card-nombre { color: var(--accent-light); }
- 
+
 .footer {
   text-align: center;
   padding: 3rem 1.5rem 1rem;
@@ -195,17 +195,17 @@ body {
 </style>
 </head>
 <body>
- 
+
 <div class="header">
   <p class="header-eyebrow">Bienvenidos</p>
   <h1>Carta de<br>Tragos</h1>
   <p class="header-sub">Ayúdate vos mismo · Salud</p>
 </div>
- 
+
 <!-- APERITIVOS -->
 <div class="section">
   <p class="section-label">Aperitivos</p>
- 
+
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -215,7 +215,7 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">Nacido en honor al héroe de la unificación italiana. Simple, equilibrado y perfecto para abrir el paladar.</p>
+      <p class="card-origen">Garibaldi unificó Italia en 1861, uniendo el norte industrial y el sur agrícola bajo una misma bandera. Este trago lo homenajea en cada vaso: el Campari, nacido en Milán en el corazón del norte, se funde con el jugo de naranja del Mezzogiorno sureño. Dos mundos distintos, un solo trago.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
         <li>1 oz Campari</li>
@@ -225,7 +225,7 @@ body {
       <p class="prep-text">Vaso largo con hielo. Campari primero, jugo de naranja encima. Revolver suavemente.</p>
     </div>
   </div>
- 
+
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -235,19 +235,19 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">Predecesor del Negroni, era el favorito de James Bond antes de que pidiera su primer Martini.</p>
+      <p class="card-origen">Predecesor del Negroni y favorito de James Bond antes de que descubriera el Martini. Nació en los bares milaneses del siglo XIX, donde los turistas americanos pedían el Bitter al Seltz con tanto entusiasmo que terminó llevando su nombre.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
         <li>1 oz Campari</li>
         <li>1 oz Vermouth rosso</li>
         <li>Soda (completa el vaso)</li>
-        <li>Twist de naranja</li>
+        <li>Twist de limón</li>
       </ul>
       <span class="block-label">Preparación</span>
-      <p class="prep-text">Vaso largo con hielo. Campari y vermouth. Completar con soda. Decorar con naranja.</p>
+      <p class="prep-text">Vaso largo con hielo. Campari y vermouth. Completar con soda. Decorar con limón.</p>
     </div>
   </div>
- 
+
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -257,7 +257,7 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">Clásico porteño de los bares de estación. Combinación criolla, sin pretensiones, infalible.</p>
+      <p class="card-origen">En los bares de las estaciones de tren porteñas, entre el humo y el ruido de las locomotoras, nació esta combinación que huele a Buenos Aires, a mostrador de zinc y a conversación sin apuro. Con el tiempo, las clases altas adoptaron el trago pero reemplazaron el Amargo Obrero por vermouth rojo — nosotros lo servimos como corresponde.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
         <li>1 oz Fernet</li>
@@ -269,7 +269,7 @@ body {
       <p class="prep-text">Vaso largo con hielo. Fernet y Amargo Obrero. Completar con soda. Exprimir y dejar el limón adentro.</p>
     </div>
   </div>
- 
+
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -279,10 +279,10 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">Argentina consume el 75% del Fernet Branca producido en el mundo. Es simplemente nuestro.</p>
+      <p class="card-origen">Argentina consume el 75% del Fernet Branca producido en el mundo. Ningún otro país lo adoptó con semejante devoción — ni siquiera Italia, donde nació. La combinación con Coca-Cola fue cosa nuestra, un accidente feliz que se convirtió en rito nacional. En cada cumpleaños, cada asado, cada recital, ahí está el Fernando. Inevitable e irresistible.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
-        <li>Fernet Branca (al gusto)</li>
+        <li>Fernet Branca</li>
         <li>Coca-Cola</li>
       </ul>
       <span class="block-label">Preparación</span>
@@ -290,11 +290,11 @@ body {
     </div>
   </div>
 </div>
- 
+
 <!-- GIN -->
 <div class="section">
   <p class="section-label">Gin</p>
- 
+
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -304,18 +304,19 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">Inventado por la Marina Real Británica para que los marineros tomaran su ración de vitamina C.</p>
+      <p class="card-origen">La Marina Real Británica del siglo XIX tenía un problema: sus marineros morían de escorbuto en alta mar por falta de vitamina C. La solución fue el cordial de lima, una mezcla de jugo y azúcar que se conservaba durante meses sin refrigeración. Alguien tuvo la idea de mezclarlo con gin, y así nació uno de los cócteles más simples y perfectos de la historia.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
-        <li>2 oz Gin</li>
+        <li>2 oz London Dry Gin</li>
         <li>0.5 oz Cordial de lima</li>
+        <li>0.5 oz Jugo de lima fresco</li>
       </ul>
       <span class="block-label">Preparación</span>
       <p class="prep-text">Coctelera con hielo. Agitar fuerte. Servir colado en copa fría.</p>
       <span class="warn">⚠ Tené cuidado que no se abra.</span>
     </div>
   </div>
- 
+
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -325,10 +326,10 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">El Conde Negroni pidió que le pusieran gin en su Americano. Hoy es uno de los cócteles más pedidos del mundo.</p>
+      <p class="card-origen">En 1919, el Conde Camillo Negroni entró al Caffè Casoni de Florencia y pidió que le reforzaran su Americano con gin en lugar de soda. El bartender obedeció, agregó una rodaja de naranja en lugar de limón, y sin saberlo creó uno de los cócteles más influyentes del siglo XX. Hoy es el trago más pedido en los mejores bares del mundo — todo gracias a un conde con sed y poca paciencia.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
-        <li>1 oz Gin</li>
+        <li>1 oz London Dry Gin</li>
         <li>1 oz Campari</li>
         <li>1 oz Vermouth rosso</li>
         <li>Twist de naranja</li>
@@ -337,7 +338,7 @@ body {
       <p class="prep-text">Vaso old fashioned con hielo. Partes iguales de los tres. Revolver 20 seg. Decorar con naranja.</p>
     </div>
   </div>
- 
+
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -347,23 +348,24 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">La quinina de la tónica era el antipalúdico de los soldados británicos en India. Le agregaron gin para hacerlo tolerable.</p>
+      <p class="card-origen">Los soldados británicos destinados en la India colonial del siglo XIX tomaban quinina disuelta en agua con gas para prevenir la malaria. Era efectivo pero intragable. La solución fue mezclarla con gin, azúcar y lima — y así, casi por accidente, nació uno de los tragos más consumidos del planeta. El Imperio Británico dejó pocas cosas buenas en su paso por el mundo. Esta es una de ellas.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
-        <li>Gin (al gusto)</li>
+        <li>1 oz London Dry Gin</li>
+        <li>0.25 oz Cordial de lima</li>
+        <li>0.25 oz Jugo de limón fresco</li>
         <li>Agua tónica</li>
-        <li>Rodaja de pepino o lima</li>
       </ul>
       <span class="block-label">Preparación</span>
-      <p class="prep-text">Copa balón con hielo abundante. Gin primero, tónica despacio por el costado. Decorar.</p>
+      <p class="prep-text">Copa balón con hielo abundante. Gin, cordial y jugo de limón primero. Tónica despacio por el costado.</p>
     </div>
   </div>
 </div>
- 
+
 <!-- WHISKEY -->
 <div class="section">
   <p class="section-label">Whiskey</p>
- 
+
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -373,19 +375,19 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">El Negroni con bourbon en lugar de gin. Lo popularizó Erskine Gwynne, un americano que editaba una revista de vida nocturna parisina.</p>
+      <p class="card-origen">En el París de los años 20, el escritor americano Erskine Gwynne editaba una revista de vida nocturna llamada — cómo no — The Boulevardier. Entre fiestas y columnistas, desarrolló una variante del Negroni que reemplazaba el gin por bourbon. El resultado es más oscuro, más cálido y más complejo que su inspiración. Algunos dicen que supera al original. El Conde Negroni no está disponible para comentar.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
-        <li>2 oz Bourbon (Bulleit)</li>
+        <li>2 oz Bourbon</li>
         <li>1 oz Campari</li>
         <li>1 oz Vermouth rosso</li>
         <li>Twist de naranja</li>
       </ul>
       <span class="block-label">Preparación</span>
-      <p class="prep-text">Vaso mezclador con hielo. Revolver 20-25 seg. Servir en vaso old fashioned con hielo grande.</p>
+      <p class="prep-text">Vaso old fashioned con hielo grande. Agregar bourbon, Campari y vermouth. Revolver 20-25 seg. Decorar con naranja.</p>
     </div>
   </div>
- 
+
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -395,19 +397,19 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">Supuestamente creado en el Manhattan Club para un banquete de Lady Randolph Churchill. El mito es demasiado bueno para abandonarlo.</p>
+      <p class="card-origen">La leyenda dice que fue creado en el Manhattan Club de Nueva York en 1880 para un banquete organizado por Lady Randolph Churchill, madre de Winston. El problema es que ella estaba en Europa en esa fecha, embarazada de su hijo. El mito es demasiado bueno para abandonarlo, pero lo cierto es que el Manhattan nació en algún bar de Nueva York a fines del siglo XIX, y desde entonces no ha necesitado mejorar nada.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
-        <li>2 oz Bourbon (Bulleit)</li>
+        <li>2 oz Bourbon</li>
         <li>1 oz Vermouth rosso</li>
         <li>2 dashes Angostura bitters</li>
-        <li>Cereza al marraschino</li>
+        <li>Cereza o cáscara de naranja confitada</li>
       </ul>
       <span class="block-label">Preparación</span>
-      <p class="prep-text">Vaso mezclador con hielo. Revolver 20-25 seg. Servir en copa fría. Decorar con cereza.</p>
+      <p class="prep-text">Vaso mezclador con hielo. Revolver 20-25 seg. Servir en copa fría. Decorar con cereza o cáscara confitada.</p>
     </div>
   </div>
- 
+
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -417,10 +419,10 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">El cóctel más antiguo que existe. En los años 1800, "cóctel" significaba exactamente esto: espirituosa, azúcar, agua y bitters.</p>
+      <p class="card-origen">Antes de que los bartenders empezaran a experimentar con jarabes exóticos y guarniciones imposibles, un cóctel era exactamente esto: una espirituosa, azúcar, agua y bitters. En los años 1800, cuando los tragos se complicaron, los bebedores más conservadores empezaron a pedir "un whisky preparado a la vieja usanza". Así nació el nombre. El trago más antiguo que existe, y después de dos siglos, todavía no hay razón para cambiarlo.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
-        <li>2 oz Bourbon (Bulleit)</li>
+        <li>2 oz Bourbon</li>
         <li>1 oz Almíbar simple</li>
         <li>2 dashes Angostura bitters</li>
         <li>Twist de naranja</li>
@@ -430,11 +432,11 @@ body {
     </div>
   </div>
 </div>
- 
+
 <!-- DE AUTOR -->
 <div class="section">
   <p class="section-label">De Autor</p>
- 
+
   <div class="card autor">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -444,7 +446,7 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">Un tributo al Padre de la Armada Argentina. Nacido en Irlanda pero héroe eterno del Río de la Plata, este cóctel une el espíritu de sus dos patrias en una sola copa. Perfil: seco, herbáceo, cítrico y complejo.</p>
+      <p class="card-origen">William Brown nació en Foxford, Irlanda, en 1777. Emigró joven, recaló en Buenos Aires, y terminó fundando la Armada Argentina — un marino mercante convertido en héroe de la independencia. Este cóctel une sus dos patrias en una sola copa: el whisky irlandés de su tierra natal abrazado por la yerba mate, el sabor de la tierra que hizo suya. Un tributo al hombre que peleó por un país que no era el suyo y que terminó siendo más suyo que ninguno.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
         <li>1.5 oz Whisky Irlandés (Tullamore)</li>
@@ -454,10 +456,10 @@ body {
         <li>1 pizca de sal</li>
       </ul>
       <span class="block-label">Preparación</span>
-      <p class="prep-text">Vaso con hielo abundante. Agregar todos los ingredientes. Revolver 15-20 seg. Colar sobre vaso corto con cubo de hielo grande. Exprimir zest de pomelo encima y decorar.</p>
+      <p class="prep-text">Vaso con hielo abundante. Agregar todos los ingredientes. Revolver 15-20 seg. Colar sobre vaso corto con cubo de hielo grande.</p>
     </div>
   </div>
- 
+
   <div class="card autor">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -467,7 +469,7 @@ body {
       <span class="card-arrow">+</span>
     </button>
     <div class="card-body">
-      <p class="card-origen">El giro sudafricano de un clásico cremoso. Al reemplazar la crema irlandesa por Amarula, el trago gana un perfil frutal y notas a nuez únicas. Perfil: cremoso, dulce y frutal.</p>
+      <p class="card-origen">El Mudslide nació en las Islas Caimán en los años 50, una mezcla cremosa de vodka, licor de café y Baileys que conquistó los bares tropicales del mundo. Este es el giro sudafricano: el Amarula, destilado del fruto del árbol de Marula que los elefantes devoran con entusiasmo cada temporada, reemplaza la crema irlandesa y transforma el trago por completo. Más frutal, más complejo, con notas a caramelo y nuez que no tienen explicación hasta que lo probás.</p>
       <span class="block-label">Ingredientes</span>
       <ul class="ing-list">
         <li>1 oz Vodka</li>
@@ -480,9 +482,9 @@ body {
     </div>
   </div>
 </div>
- 
-<div class="footer">Salud y buena noches</div>
- 
+
+<div class="footer">Salud y buena noche</div>
+
 <script>
 function toggle(btn) {
   btn.closest('.card').classList.toggle('open');
@@ -490,4 +492,3 @@ function toggle(btn) {
 </script>
 </body>
 </html>
- 
