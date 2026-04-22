@@ -17,9 +17,9 @@
   --accent: #7b9cbe;
   --accent-light: #a8c4de;
 }
-
+ 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-
+ 
 body {
   background: var(--bg);
   color: var(--white);
@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   padding-bottom: 4rem;
 }
-
+ 
 .header {
   padding: 3rem 1.5rem 2.5rem;
   text-align: center;
@@ -56,12 +56,12 @@ body {
   color: var(--muted);
   letter-spacing: 0.1em;
 }
-
+ 
 .section {
   margin-top: 2rem;
   padding: 0 1.25rem;
 }
-
+ 
 .section-label {
   font-size: 9px;
   font-weight: 500;
@@ -72,12 +72,12 @@ body {
   padding-bottom: 0.75rem;
   border-bottom: 0.5px solid var(--border);
 }
-
+ 
 .card {
   border-bottom: 0.5px solid var(--border);
   overflow: hidden;
 }
-
+ 
 .card-toggle {
   width: 100%;
   background: none;
@@ -90,9 +90,9 @@ body {
   align-items: center;
   gap: 12px;
 }
-
+ 
 .card-toggle-left { flex: 1; }
-
+ 
 .card-nombre {
   font-family: 'DM Serif Display', serif;
   font-size: 22px;
@@ -101,7 +101,7 @@ body {
   display: block;
   line-height: 1.2;
 }
-
+ 
 .card-badge {
   font-size: 11px;
   font-weight: 300;
@@ -110,7 +110,7 @@ body {
   margin-top: 3px;
   display: block;
 }
-
+ 
 .card-arrow {
   color: var(--accent);
   font-size: 22px;
@@ -120,13 +120,13 @@ body {
   font-weight: 300;
 }
 .card.open .card-arrow { transform: rotate(45deg); }
-
+ 
 .card-body {
   display: none;
   padding-bottom: 1.25rem;
 }
 .card.open .card-body { display: block; }
-
+ 
 .card-origen {
   font-size: 13px;
   font-weight: 300;
@@ -135,7 +135,7 @@ body {
   margin-bottom: 1.1rem;
   font-style: italic;
 }
-
+ 
 .block-label {
   font-size: 9px;
   font-weight: 500;
@@ -146,7 +146,7 @@ body {
   margin-bottom: 0.5rem;
   margin-top: 1rem;
 }
-
+ 
 .ing-list { list-style: none; }
 .ing-list li {
   font-size: 14px;
@@ -166,14 +166,14 @@ body {
   line-height: 1;
   flex-shrink: 0;
 }
-
+ 
 .prep-text {
   font-size: 13px;
   font-weight: 300;
   color: rgba(255,255,255,0.75);
   line-height: 1.7;
 }
-
+ 
 .warn {
   display: block;
   margin-top: 8px;
@@ -181,9 +181,9 @@ body {
   color: var(--accent-light);
   letter-spacing: 0.04em;
 }
-
+ 
 .card.autor .card-nombre { color: var(--accent-light); }
-
+ 
 .footer {
   text-align: center;
   padding: 3rem 1.5rem 1rem;
@@ -195,17 +195,17 @@ body {
 </style>
 </head>
 <body>
-
+ 
 <div class="header">
   <p class="header-eyebrow">Bienvenidos</p>
   <h1>Carta de<br>Tragos</h1>
   <p class="header-sub">Ayúdate vos mismo · Salud</p>
 </div>
-
+ 
 <!-- APERITIVOS -->
 <div class="section">
   <p class="section-label">Aperitivos</p>
-
+ 
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -225,7 +225,7 @@ body {
       <p class="prep-text">Vaso largo con hielo. Campari primero, jugo de naranja encima. Revolver suavemente.</p>
     </div>
   </div>
-
+ 
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -247,7 +247,7 @@ body {
       <p class="prep-text">Vaso largo con hielo. Campari y vermouth. Completar con soda. Decorar con naranja.</p>
     </div>
   </div>
-
+ 
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -269,7 +269,7 @@ body {
       <p class="prep-text">Vaso largo con hielo. Fernet y Amargo Obrero. Completar con soda. Exprimir y dejar el limón adentro.</p>
     </div>
   </div>
-
+ 
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -290,11 +290,11 @@ body {
     </div>
   </div>
 </div>
-
+ 
 <!-- GIN -->
 <div class="section">
   <p class="section-label">Gin</p>
-
+ 
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -315,7 +315,7 @@ body {
       <span class="warn">⚠ Tené cuidado que no se abra.</span>
     </div>
   </div>
-
+ 
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -337,7 +337,7 @@ body {
       <p class="prep-text">Vaso old fashioned con hielo. Partes iguales de los tres. Revolver 20 seg. Decorar con naranja.</p>
     </div>
   </div>
-
+ 
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -359,11 +359,11 @@ body {
     </div>
   </div>
 </div>
-
+ 
 <!-- WHISKEY -->
 <div class="section">
   <p class="section-label">Whiskey</p>
-
+ 
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -385,7 +385,7 @@ body {
       <p class="prep-text">Vaso mezclador con hielo. Revolver 20-25 seg. Servir en vaso old fashioned con hielo grande.</p>
     </div>
   </div>
-
+ 
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -407,7 +407,7 @@ body {
       <p class="prep-text">Vaso mezclador con hielo. Revolver 20-25 seg. Servir en copa fría. Decorar con cereza.</p>
     </div>
   </div>
-
+ 
   <div class="card">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -430,11 +430,11 @@ body {
     </div>
   </div>
 </div>
-
+ 
 <!-- DE AUTOR -->
 <div class="section">
   <p class="section-label">De Autor</p>
-
+ 
   <div class="card autor">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -449,16 +449,15 @@ body {
       <ul class="ing-list">
         <li>1.5 oz Whisky Irlandés (Tullamore)</li>
         <li>1 oz Cold brew de yerba mate</li>
-        <li>0.25 oz Almíbar simple</li>
+        <li>0.25 oz Cordial de pomelo</li>
         <li>2 dashes Angostura bitters</li>
         <li>1 pizca de sal</li>
-        <li>Zest de pomelo rosado</li>
       </ul>
       <span class="block-label">Preparación</span>
       <p class="prep-text">Vaso con hielo abundante. Agregar todos los ingredientes. Revolver 15-20 seg. Colar sobre vaso corto con cubo de hielo grande. Exprimir zest de pomelo encima y decorar.</p>
     </div>
   </div>
-
+ 
   <div class="card autor">
     <button class="card-toggle" onclick="toggle(this)">
       <div class="card-toggle-left">
@@ -481,9 +480,9 @@ body {
     </div>
   </div>
 </div>
-
+ 
 <div class="footer">Salud y buena noche</div>
-
+ 
 <script>
 function toggle(btn) {
   btn.closest('.card').classList.toggle('open');
@@ -491,3 +490,4 @@ function toggle(btn) {
 </script>
 </body>
 </html>
+ 
